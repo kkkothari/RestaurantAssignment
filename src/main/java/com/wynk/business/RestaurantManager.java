@@ -1,12 +1,9 @@
 package com.wynk.business;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import com.wynk.dao.DeliveryPersonDao;
 import com.wynk.dao.OrderDao;
@@ -16,6 +13,7 @@ import com.wynk.model.DeliveryPerson;
 import com.wynk.model.Order;
 import com.wynk.model.OrderStatus;
 import com.wynk.util.Constant;
+
 @Repository
 public class RestaurantManager {
 	@Autowired
@@ -42,7 +40,7 @@ public class RestaurantManager {
 	public OrderStatus updateDeliveryStatus(OrderStatus orderStatus) {
 			orderStatusDao.updateStatus(orderStatus);
 			if(orderStatus.getStatus().equalsIgnoreCase(Constant.REACHED_BACK)) {
-				String deliveryPersonId = orderPersonDao.getPersonId(orderStatus.getOrderId());
+				String deliveryPersonId = orderPersonDao.getDeliveryPersonId(orderStatus.getOrderId());
 				deliveryPersonDao.getDeliveryPerson(deliveryPersonId).setStatus(Constant.INACTIVE);
 				orderPersonDao.deleteOrderPerson(deliveryPersonId);
 			}

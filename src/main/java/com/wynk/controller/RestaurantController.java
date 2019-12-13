@@ -1,9 +1,6 @@
 package com.wynk.controller;
 
 import java.util.List;
-import java.util.Set;
-
-import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +26,7 @@ public class RestaurantController {
 	Gson gson = new Gson();
 
 	@PostMapping(path="/place-order", consumes = "application/json", produces = "application/json")
-	public  ResponseEntity<OrderStatus> placeOrder(OrderDetail orderDetail) {
+	public  ResponseEntity<OrderStatus> placeOrder(@RequestBody OrderDetail orderDetail) {
 		OrderStatus orderStatus = restaurantManager.placeOrder(orderDetail.getItemId(), orderDetail.getNoOfItem(), 0, 59);
 		return new ResponseEntity<OrderStatus>(orderStatus, HttpStatus.OK);
 	}

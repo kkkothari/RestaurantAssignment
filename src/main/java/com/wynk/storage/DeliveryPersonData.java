@@ -9,15 +9,15 @@ public class DeliveryPersonData {
 	private static Map<String, DeliveryPerson> deliveryPersons = new HashMap<>();
 	static {
 		DeliveryPerson dp1 = new DeliveryPerson();
-		deliveryPersons.put(dp1.getPersonId(), dp1);
+		deliveryPersons.put(dp1.getDeliveryPersonId(), dp1);
 		dp1 = new DeliveryPerson();
-		deliveryPersons.put(dp1.getPersonId(), dp1);
+		deliveryPersons.put(dp1.getDeliveryPersonId(), dp1);
 		dp1 = new DeliveryPerson();
-		deliveryPersons.put(dp1.getPersonId(), dp1);
+		deliveryPersons.put(dp1.getDeliveryPersonId(), dp1);
 		dp1 = new DeliveryPerson();
-		deliveryPersons.put(dp1.getPersonId(), dp1);
+		deliveryPersons.put(dp1.getDeliveryPersonId(), dp1);
 		dp1 = new DeliveryPerson();
-		deliveryPersons.put(dp1.getPersonId(), dp1);
+		deliveryPersons.put(dp1.getDeliveryPersonId(), dp1);
 	}
 	public static Map<String, DeliveryPerson> getDeliveryPersons() {
 		return deliveryPersons;

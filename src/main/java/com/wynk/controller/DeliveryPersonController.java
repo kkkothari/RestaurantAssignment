@@ -8,23 +8,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 import com.wynk.business.DeliveryPersonManager;
-import com.wynk.business.RestaurantManager;
-import com.wynk.dao.OrderPersonDao;
 import com.wynk.model.OrderPerson;
-import com.wynk.model.OrderStatus;
 
 @RestController
 @RequestMapping("/delivery-person")
 public class DeliveryPersonController {
 	@Autowired
 	DeliveryPersonManager deliveryPersonManager;
-	@Autowired
-	private OrderPersonDao orderPersonDao;
 	Gson gson = new Gson();
 
     @GetMapping(path="/status/{deliveryPersonId}", produces = "application/json")
