@@ -3,24 +3,24 @@ package com.wynk.model;
 import java.util.UUID;
 
 public class DeliveryPerson {
-	private String personId;
+	private String deliveryPersonId;
 	private String status;
 	public DeliveryPerson() {
 		super();
-		this.personId = UUID.randomUUID().toString();
+		this.deliveryPersonId = UUID.randomUUID().toString();
 		this.status = "INACTIVE";
 	}
 	
 	@Override
 	public String toString() {
-		return "{\"personId\" : "+personId+", \"status\" : "+status+"}";
+		return "{\"personId\" : "+deliveryPersonId+", \"status\" : "+status+"}";
 	}
 
-	public String getPersonId() {
-		return personId;
+	public String getDeliveryPersonId() {
+		return deliveryPersonId;
 	}
-	public void setPersonId(String personId) {
-		this.personId = personId;
+	public void setDeliveryPersonId(String personId) {
+		this.deliveryPersonId = personId;
 	}
 	public String getStatus() {
 		return status;

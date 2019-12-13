@@ -1,11 +1,11 @@
 package com.wynk.dao;
 
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Repository;
 
 import com.wynk.model.Order;
 import com.wynk.storage.OrderData;
+
 @Repository
 public class OrderDao {
 	public void insertOrder(Order order) {

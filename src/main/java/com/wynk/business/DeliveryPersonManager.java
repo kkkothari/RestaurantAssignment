@@ -6,18 +6,16 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import com.wynk.dao.DeliveryPersonDao;
 import com.wynk.dao.OrderDao;
 import com.wynk.dao.OrderPersonDao;
-import com.wynk.dao.OrderStatusDao;
 import com.wynk.model.DeliveryPerson;
 import com.wynk.model.Order;
 import com.wynk.model.OrderPerson;
 import com.wynk.util.Constant;
+
 @Repository
 public class DeliveryPersonManager {
 	@Autowired
@@ -28,7 +26,7 @@ public class DeliveryPersonManager {
 	private OrderPersonDao orderPersonDao;
 	
 	public String delegate(OrderPerson orderPerson) {
-		DeliveryPerson deliveryPerson = deliveryPersonDao.getDeliveryPerson(orderPerson.getPersonId());
+		DeliveryPerson deliveryPerson = deliveryPersonDao.getDeliveryPerson(orderPerson.getDeliveryPersonId());
 		String status = Constant.ACCEPTED;
 		if(deliveryPerson.getStatus().equals(Constant.ACTIVE)) {
 			status = Constant.NOT_ACCEPTED;

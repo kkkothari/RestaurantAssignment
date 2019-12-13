@@ -1,11 +1,11 @@
 package com.wynk.dao;
 
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Repository;
 
 import com.wynk.model.OrderStatus;
 import com.wynk.storage.OrderStatusData;
+
 @Repository
 public class OrderStatusDao {
 	public OrderStatus getStatus(String orderId) {

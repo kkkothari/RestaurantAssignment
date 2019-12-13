@@ -3,14 +3,12 @@ package com.wynk.dao;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Repository;
 
 import com.wynk.model.DeliveryPerson;
 import com.wynk.storage.DeliveryPersonData;
+
 @Repository
 public class DeliveryPersonDao {
 	public void updateStatus(String deliveryPersonId, String status){
