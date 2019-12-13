@@ -31,7 +31,7 @@ public class DeliveryPersonManager {
 		if(deliveryPerson.getStatus().equals(Constant.ACTIVE)) {
 			status = Constant.NOT_ACCEPTED;
 		}
-		deliveryPerson.setStatus(Constant.ACTIVE);
+		deliveryPersonDao.updateStatus(deliveryPerson.getDeliveryPersonId(), Constant.ACTIVE);
 		orderPersonDao.insertOrderPerson(orderPerson);
 		return "{\"status\" : " + status + "}";
 		
@@ -44,7 +44,7 @@ public class DeliveryPersonManager {
 			Order order = orderDao.getOrder(orderId);
 			long minute = LocalTime.now().until(order.getEndTime(), MINUTES);
 			Duration.between(order.getEndTime(), LocalTime.now());
-			return "{\"status\":"+Constant.INACTIVE+",\"MinuteLeft\":"+minute+"}";
+			return "{\"status\":"+Constant.ACTIVE+",\"MinuteLeft\":"+minute+",\"orderId\": " + orderId +"}";
 		}
 		else {
 			return "{\"status\":"+Constant.INACTIVE+"}";
